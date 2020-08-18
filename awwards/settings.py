@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'tinymce',
+    'registration',
     'bootstrap3',
     'won',
     'django.contrib.admin',
