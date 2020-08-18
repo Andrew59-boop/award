@@ -10,15 +10,38 @@
    {% bootstrap_css%}
    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' >
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  {% endblock%}
+   <style>
+   .navbar {
+    background: transparent;
+    color:blue;   
+
+
+}
+
+
+.navbar-brand {
+    font-size: 1em  ;
+    font-weight: bolder;
+    background-color: rgb(50, 115, 220);
+    background-clip: padding-box;
+    background-size: 120px 80px; 
+    padding-bottom: 50px;
+    bottom: auto;
+    margin: 30px 60px;
+}
+
+
+</style>
+
+   {% endblock%}
 </head>
 <body>
 
-<nav class="navbar">
+<nav  style="background-color:blue" class="navbar">
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
-      <a  class="navbar-brand" data-toggle="modal" data-target="#settings" aria-hidden="true"style="color:black;" ><i class="fa fa-bars" style="color:black;"></i> Menu</a>
+      <a  class="navbar-brand" data-toggle="modal" data-target="#settings" aria-hidden="true"style="color:black;" ><i class="fa fa-bars" style="color:blue;"></i> Menu</a>
       <form class="navbar-form" role="search" action="{% url 'search_results' %}">
 
         <div class="input-group">
@@ -31,19 +54,19 @@
       </form>
     </div>
     <div class="col-md-4">
-      <a class="navbar-brand" href="{% url 'indexPage' %}" style="color:black;"> <b>Awwards</b></a>
+      <a class="navbar-brand" href="{% url 'indexPage' %}" style="color:purple;"> <b>Awwards</b></a>
     </div>
     <div class="col-md-4" class="navbar navbar-right">
       {% if user.is_authenticated %}
 
-      <h6><a  class="navbar-brand" href="/accounts/register/" style="color:black;"> Register</a>
-      <a class="navbar-brand" <a href="/logout/"style="color:black;">Log Out</a>
-      <a  class="navbar-brand" href="{% url 'new-project' %}" style="color:black;">Add Project</a>
-      <a  class="navbar-brand" href="{% url 'Profile' %}" style="color:black;">profile</a></h6>
+      <h6><a  class="navbar-brand" href="/accounts/register/" style="color:purple;"> Register</a>
+      <a class="navbar-brand" href="/logout/"style="color:black;">Log Out</a>
+      <a  class="navbar-brand" href="{% url 'ProjectForm' %}" style="color:purple;">Add Project</a>
+      <a  class="navbar-brand" href="{% url 'Profile' %}" style="color:purple;">profile</a></h6>
 
       {% else %}
       <li>
-        <a class="navbar-brand" href="/accounts/login" style="color:black;">Login</a>
+        <a class="navbar-brand" href="/accounts/login" style="color:purple;">Login</a>
       </li>
 
       {% endif %}
